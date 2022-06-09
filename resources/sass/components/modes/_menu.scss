@@ -1,0 +1,12 @@
+.component.menu {
+    ul {
+        list-style: none;
+        padding-left: 0;
+
+        li {
+            &.selected {
+                text-transform: lowercase;
+            }
+        }
+    }
+}

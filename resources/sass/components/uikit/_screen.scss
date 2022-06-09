@@ -1,0 +1,21 @@
+@use '../../variables' as v;
+
+.component.screen {
+    display: flow-root;
+    background-color: black;
+    margin-top: -2px;
+    color: white;
+    height: 300px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding-left: v.$device-inner-padding;
+    padding-right: v.$device-inner-padding;
+    padding-top: 15px;
+
+    font-family: "ZX81", monospace;
+    text-transform: uppercase;
+
+    strong {
+        text-transform: lowercase;
+    }
+}

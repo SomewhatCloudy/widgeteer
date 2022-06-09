@@ -1,0 +1,27 @@
+pwd
+ifconfig
+
+# Update environment
+export PHP_IDE_CONFIG="serverName=host.docker.internal" >> /etc/apache2/envvars
+
+sudo chown -R 1000:1000 "/root/.npm"
+
+# Start apache
+service apache2 start
+
+# Show logs
+truncate --size=0 /var/www/html/storage/logs/laravel.log
+
+#
+composer dump-autoload
+composer update
+php artisan cache:clear
+php artisan route:clear
+php artisan config:clear
+php artisan view:clear
+
+# Generate JS from Mix
+npm i
+npm run watch
+#tail -f /dev/stderr
+#tail -f /var/www/html/storage/logs/laravel.log

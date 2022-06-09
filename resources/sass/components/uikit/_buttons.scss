@@ -1,0 +1,32 @@
+@use '../../variables' as v;
+
+.component.buttons {
+    display: flex;
+    padding-left: v.$device-inner-padding;
+    padding-right: v.$device-inner-padding;
+    padding-top: 10px;
+
+    >ul {
+        display: flex;
+        justify-content: left;
+        flex-wrap: wrap;
+        flex-grow: 0;
+        flex-shrink: 0;
+        //margin: 0 calc(#{v.$button-spacing} * -.5) - calc(#{v.$button-spacing} * -.5);
+
+        list-style: none;
+        padding-left: 0;
+
+        li {
+            padding: 0 calc(#{v.$button-spacing} / 2) v.$button-spacing calc(#{v.$button-spacing} / 2);
+        }
+    }
+
+    >ul.buttons-numbers {
+        width: calc((#{v.$button-width} * 5) + (#{v.$button-spacing} * 5));
+    }
+    >ul.buttons-directions,
+    >ul.buttons-controls {
+        width: calc((#{v.$button-width} * 1) + (#{v.$button-spacing} * 1));
+    }
+}

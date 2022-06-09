@@ -1,0 +1,18 @@
+@use "./variables" as v;
+
+@import "~normalize-scss/sass/normalize";
+
+@import "fonts";
+
+@import "components/modes/menu";
+@import "components/modes/widgets";
+@import "components/modes/order-history";
+
+@import "components/uikit/device";
+@import "components/uikit/button";
+@import "components/uikit/buttons";
+@import "components/uikit/screen";
+
+body {
+    background-color: v.$background-colour;
+}

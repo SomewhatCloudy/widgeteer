@@ -1,0 +1,34 @@
+version: "3.9"
+services:
+  php:
+    ports:
+      - "8810:80"
+      - "35729:35729"
+    expose:
+      - 9003
+    build: ./vm/
+    command: sh -c "chmod +x /usr/bin/container-start && /usr/bin/container-start"
+    environment:
+      XDEBUG_CONFIG: remote_host=host.docker.internal
+    volumes:
+      - ./:/var/www/html/
+      - ./vm/conf.d/xdebug-local.ini:/usr/local/etc/php/conf.d/xdebug-local.ini:cached
+      - ./vm/conf.d/memory_usage.ini:/usr/local/etc/php/conf.d/memory_usage.ini:cached
+      - ./vm/conf.d/error_reporting.ini:/usr/local/etc/php/conf.d/error_reporting.ini:cached
+      - ./vm/container-start:/usr/bin/container-start:cached
+      - ./vm/.env.vm:/var/www/html/.env:cached
+      - ./vm/.htaccess.vm:/var/www/html/.htaccess:cached
+    env_file:
+      - vm/.env.vm
+
+  mysql:
+      image: mysql:5.7
+      ports:
+          - "3820:3306"
+      restart: always
+      environment:
+          MYSQL_ROOT_PASSWORD: root
+          MYSQL_DATABASE: widgeteer
+          MYSQL_USER: user
+          MYSQL_PASSWORD: pass
+

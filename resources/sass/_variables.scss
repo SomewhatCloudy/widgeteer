@@ -1,0 +1,27 @@
+$background-colour: #95c9ed;
+
+$device-width: 420px;
+$device-border-colour: #414141;
+$device-border-thickness: 8px;
+$device-border-radius: 30px;
+$device-background-colour: #e3deda;
+$device-inner-padding: 20px;
+
+$button-font-size: 18px;
+$button-font-family: "Nau Sea", sans-serif;
+$button-font-colour: white;
+
+$button-spacing: 12px;
+$button-width: 42px;
+$button-height: 32px;
+$button-background-colour: #414141;
+$button-border-colour: lighten($button-background-colour, 16%);
+$button-border-thickness: 4px;
+$button-border-radius: 5px;
+
+$button-background-colour-ok: #01cb01;
+$button-border-colour-ok: lighten($button-background-colour-ok, 16%);
+$button-background-colour-clear: #cb5c01;
+$button-border-colour-clear: lighten($button-background-colour-clear, 16%);
+$button-background-colour-arrow: $button-background-colour;
+$button-border-colour-arrow: lighten($button-background-colour-arrow, 16%);

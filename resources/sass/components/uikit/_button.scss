@@ -1,0 +1,34 @@
+@use "../../variables" as v;
+
+.component.button {
+    cursor: pointer;
+    width: v.$button-width;
+    height: v.$button-height;
+    font-family: v.$button-font-family;
+    font-size: v.$button-font-size;
+    color: v.$button-font-colour;
+
+    background-color: v.$button-background-colour;
+    border: v.$button-border-thickness solid;
+    border-color: v.$button-border-colour;
+    border-radius: v.$button-border-radius;
+    box-sizing: border-box;
+
+    text-align: center;
+    line-height: calc(#{v.$button-height} - (#{v.$button-border-thickness} * 2));
+
+    &.arrow {
+        background-color: v.$button-background-colour-arrow!important;
+        border-color: v.$button-border-colour-arrow!important;
+    }
+
+    &.ok {
+        background-color: v.$button-background-colour-ok!important;
+        border-color: v.$button-border-colour-ok!important;
+    }
+
+    &.clear {
+        background-color: v.$button-background-colour-clear!important;
+        border-color: v.$button-border-colour-clear!important;
+    }
+}

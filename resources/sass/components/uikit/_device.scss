@@ -1,0 +1,49 @@
+@use "../../variables" as v;
+
+.component.device {
+    margin: 80px auto;
+    width: v.$device-width;
+    background-color: v.$device-background-colour;
+    text-transform: lowercase;
+
+    border: v.$device-border-thickness v.$device-border-colour solid;
+    border-radius: v.$device-border-radius;
+
+    .header {
+        display: flow-root;
+        background-image: url(../../../assets/4x/stripe@4x.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: 50% 100%;
+        padding-left: v.$device-inner-padding;
+        padding-right: v.$device-inner-padding;
+
+        h1 {
+            display: block;
+            background-image: url(../../../assets/4x/logo@4x.png);
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: 50% 50%;
+            margin: 10px 0 0 0;
+
+            color: transparent;
+            font-size: 0;
+
+            height: 90px;
+        }
+
+        h2 {
+            display: block;
+            background-image: url(../../../assets/4x/logo-company@4x.png);
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: 100% 50%;
+            margin: 10px 6px;
+
+            color: transparent;
+            font-size: 0;
+
+            height: 16px;
+        }
+    }
+}
